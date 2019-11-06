@@ -20,7 +20,7 @@ from setuptools import setup
 
 # Constants
 PACKAGE_NAME = 'package_name'
-PACKAGE_LIST = ['module_name',]
+PACKAGE_LIST = ['package_name',]
 
 with open("README.md", 'r') as f:
     long_description = f.read()
