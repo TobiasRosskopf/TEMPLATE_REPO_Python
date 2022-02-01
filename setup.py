@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.8
 # -*- coding: utf-8 -*-
 
 """
@@ -58,7 +58,7 @@ setup(
     keywords="",
 
     # Package info
-    python_requires=">=3.9",
+    python_requires=">=3.8",
     packages=find_packages(include=PACKAGE_LIST),
     install_requires=REQUIREMENTS,
     include_package_data=True,

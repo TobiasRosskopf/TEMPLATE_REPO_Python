@@ -16,9 +16,6 @@ pytest-datadir = "*"
 pytest-benchmark = "*"
 pyright = "*"
 
-[requires]
-python_version = "3.9"
-
 [scripts]
 start = "python main.py"
 test = "python -m pytest"
