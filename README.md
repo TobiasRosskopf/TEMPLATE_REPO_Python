@@ -1,2 +1,3 @@
-# package_name.py
+# README
+
 Write README!

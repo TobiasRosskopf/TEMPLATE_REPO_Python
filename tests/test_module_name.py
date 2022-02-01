@@ -1,30 +1,85 @@
-#! python3.8
+#!/usr/bin/env python3.9
 # -*- coding: utf-8 -*-
 
-# File name:    test_module_name.py
-# Author:       Tobias Rosskopf
-# Email:        tobirosskopf@gmail.com
-# Created:      ??.??.2019
-# Modified:     ??.??.2019
-
 """
-Unittest for module <module_name.py>.
+**Created:**    ??.??.2022
+**Modified:**   ??.??.2022
+
+**Authors:**    [Tobias Rosskopf](mailto:tobirosskopf@gmail.com)
+
+Unit tests for <module_name>
 """
 
-# Standard imports
-import unittest
+import pytest
 
-# Package imports
-import package_name.module_name
+from package_name.module_name import ClassName
 
 
-class TestClassName(unittest.TestCase):
-    """Testclass's docstring"""
+class TestClassName:
+    """
+    Unit tests for <ClassName>
+    """
 
-    def test_main(self):
-        """Test's docstring"""
-        self.assertEqual(package_name.module_name.main("Test"), "Test")
+    @pytest.fixture()
+    def class_name_instance(self):
+        """
+        Fixture for <ClassName> instance
 
+        Returns:
+            <ClassName>: Instance of Classname
+        """
+        return ClassName()
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_init(self, class_name_instance: ClassName):
+        """
+        Tests <ClassName>'s instroctor
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert class_name_instance.name == ""
+
+    def test_repr(self, class_name_instance: ClassName):
+        """
+        Tests REPL representation
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert repr(class_name_instance) == "ClassName()"
+
+    def test_str(self, class_name_instance: ClassName):
+        """
+        Tests string representation
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert str(class_name_instance) == ""
+
+    def test_eq(self, class_name_instance: ClassName):
+        """
+        Tests equality check
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert class_name_instance == ClassName()
+
+    def test_not_eq(self, class_name_instance: ClassName):
+        """
+        Tests not equality check
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert class_name_instance != ClassName("test")
+
+    def test_not_instance(self, class_name_instance: ClassName):
+        """
+        Tests not equality check
+
+        Args:
+            class_name_instance (<ClassName>): Instance of Classname
+        """
+        assert class_name_instance != "test"

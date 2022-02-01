@@ -1,0 +1,15 @@
+{
+    "typeCheckingMode": "basic",
+    "include": [
+        "./package_name/*",
+        "./tests/*",
+        "./main.py",
+        "./setup.py",
+    ],
+    "exclude": [
+        "./build/*",
+        "./dist/*",
+        "./docs/*",
+        "./__pycache__/*",
+    ],
+}

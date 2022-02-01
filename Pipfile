@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+colorama = "*"
+
+[dev-packages]
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+pytest-datadir = "*"
+pytest-benchmark = "*"
+pyright = "*"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+start = "python main.py"
+test = "python -m pytest"
+lint = "python -m flake8"
+format = "python -m black"
+typing = "python -m pyright"
+req = "bash ./scripts/req.sh"
+doc = "bash ./scripts/doc.sh"
+cov = "bash ./scripts/cov.sh"

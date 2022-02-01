@@ -1,38 +1,60 @@
-#! python3.8
+#!/usr/bin/env python3.9
 # -*- coding: utf-8 -*-
 
-# File name:    module_name.py
-# Author:       Tobias Rosskopf
-# Email:        tobirosskopf@gmail.com
-# Created:      ??.??.2019
-# Modified:     ??.??.2019
-
 """
-Module's docstring
+**Created:**    ??.??.2022
+**Modified:**   ??.??.2022
+
+**Authors:**    [Tobias Rosskopf](mailto:tobirosskopf@gmail.com)
+
+<module_name>'s docstring
 """
 
-# Standard imports
-import sys
 
-# Third party imports
-# import
+class ClassName:
+    """
+    Class for <ClassName>
+    """
 
-# Package imports
-# import
+    def __init__(self, name: str = "") -> None:
+        """
+        <ClassName> constructor
 
+        Args:
+            name (str): Name of instance
+        """
+        self.name: str = name
 
-class Class:
-    """Class's docstring"""
+    def __repr__(self) -> str:
+        """
+        Generates REPL representation for <ClassName>
 
-    def __init__(self):
-        """Class constructor"""
-        pass
+        Returns:
+            str: REPL representation
+        """
+        return f"{self.__class__.__name__}({self.name})"
 
+    def __str__(self) -> str:
+        """
+        Generates string representation for <ClassName>
 
-def main(args):
-    """Main method"""
-    return args
+        Returns:
+            str: String representation
+        """
+        return f"{self.name}"
 
+    def __eq__(self, other: object) -> bool:
+        """
+        Checks if <ClassName> instance is equal to other
 
-if __name__ == '__main__':
-    main(sys.argv)
+        Args:
+            other (object): Other object
+
+        Returns:
+            bool: True if equal, False otherwise
+        """
+        if isinstance(other, ClassName):
+            return (
+                self.name == other.name
+            )
+        return False
