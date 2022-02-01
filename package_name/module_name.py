@@ -54,7 +54,5 @@ class ClassName:
             bool: True if equal, False otherwise
         """
         if isinstance(other, ClassName):
-            return (
-                self.name == other.name
-            )
+            return self.name == other.name
         return False

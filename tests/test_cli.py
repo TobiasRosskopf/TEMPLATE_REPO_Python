@@ -20,6 +20,7 @@ class TestCLI:
     """
     Unit tests for the command line interface
     """
+
     @pytest.fixture()
     def cli_runner_instance(self) -> CliRunner:
         """

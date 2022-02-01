@@ -14,7 +14,7 @@ Setup file for the package
 from setuptools import find_packages
 
 from distutils.core import setup
-# from distutils.core import find_packages
+
 
 from package_name import (
     __name__,
@@ -41,7 +41,9 @@ with open("requirements.txt") as file_requirements:
     REQUIREMENTS = [req.strip() for req in file_requirements.readlines() if "==" in req]
 
 with open("requirements-dev.txt") as file_requirements_dev:
-    REQUIREMENTS_DEV = [req.strip() for req in file_requirements_dev.readlines() if "==" in req]
+    REQUIREMENTS_DEV = [
+        req.strip() for req in file_requirements_dev.readlines() if "==" in req
+    ]
 
 
 setup(
@@ -50,13 +52,12 @@ setup(
     version=__version__,
     description=__description__,
     long_description=f"{README}\n{HISTORY}",
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     license=__license__,
     author=__author__,
     author_email=__email__,
     url=f"https://github.com/tobiasrosskopf/{__name__}",
     keywords="",
-
     # Package info
     python_requires=">=3.8",
     packages=find_packages(include=PACKAGE_LIST),
@@ -67,7 +68,6 @@ setup(
             f"{__name__}={__name__}.cli:main",
         ],
     },
-
     # Tests
     test_suite="tests",
     tests_require=REQUIREMENTS_DEV,
