@@ -54,7 +54,7 @@ jobs:
 
     - name: Build docs
       run: |
-        pipenv run doc
+        pipenv run doc --no-open
 
     - name: Install package
       run: |
